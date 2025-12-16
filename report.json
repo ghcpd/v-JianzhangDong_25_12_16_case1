@@ -1,0 +1,18 @@
+{
+  "problems": [
+    {
+      "id": 1,
+      "file": "README.md",
+      "line_numbers": [13, 14],
+      "original": "python -m venv venv\nvenv\\Scripts\\activate",
+      "updated": "python -m venv .venv\n\nActivate it in PowerShell (recommended):\n\n\.\.venv\\Scripts\\Activate.ps1\n\nOr on cmd:\n\n\.\.venv\\Scripts\\activate.bat",
+      "fix_explanation": "Updated to use the project’s `.venv` directory and provided correct activation commands for PowerShell and cmd. The original used `venv` and an incorrect activation path."    },
+    {
+      "id": 2,
+      "file": "README.md",
+      "line_numbers": [36, 37, 38],
+      "original": "```\npython main.py\n```",
+      "updated": "```\npython app.py\n```",
+      "fix_explanation": "Corrected the run command to reflect the actual entrypoint (`app.py`). This ensures users run the correct script to start the service."    }
+  ]
+}
