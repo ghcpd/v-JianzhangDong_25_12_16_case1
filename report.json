@@ -1,0 +1,20 @@
+{
+  "problems": [
+    {
+      "id": 1,
+      "file": "README.md",
+      "line_numbers": [28],
+      "original": "### 3. Configure environment variables\n```\ncopy .env.example .env\n```\n\nEdit .env and set the following values:\n```\nAPP_ENV=dev\nPORT=8000\nDEBUG=true\n```",
+      "updated": "### 3. Configure environment variables\n\nSet the required environment variable:\n```bash\nset APP_MODE=production\n```",
+      "fix_explanation": "The project does not use .env files. It requires the APP_MODE environment variable to be set to 'production' (as enforced by app.py). The old environment variables (APP_ENV, PORT, DEBUG) don't match the actual implementation. PORT is configured in settings.yaml (9123), not via environment variables."
+    },
+    {
+      "id": 2,
+      "file": "README.md",
+      "line_numbers": [37],
+      "original": "### 4. Run the application\n```\npython main.py\n```\n\n### 5. Verify the service\nOpen your browser and visit:\nhttp://localhost:8000\n\nIf the page loads successfully, the service has started correctly.",
+      "updated": "### 4. Run the application\n\n```bash\npython app.py\n```\n\nThe application will start and display output similar to:\n```\nService started successfully\nPort: 9123\n```\n\n### 5. Run tests\n\nExecute the test suite:\n```bash\npython auto_test.py\n```\n\nTest results will be written to `logs/test_run.log`.",
+      "fix_explanation": "The actual entry point is 'app.py', not 'main.py'. The application is not a web service listening on localhost - it's a command-line application that outputs status information and exits. The port 9123 is the configured service port from settings.yaml. Added test execution instructions."
+    }
+  ]
+}

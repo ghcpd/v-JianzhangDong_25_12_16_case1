@@ -21,24 +21,29 @@ pip install -r requirements.txt
 ```
 
 ### 3. Configure environment variables
-```
-copy .env.example .env
-```
 
-Edit .env and set the following values:
-```
-APP_ENV=dev
-PORT=8000
-DEBUG=true
+Set the required environment variable:
+```bash
+set APP_MODE=production
 ```
 
 ### 4. Run the application
-```
-python main.py
+
+```bash
+python app.py
 ```
 
-### 5. Verify the service
-Open your browser and visit:
-http://localhost:8000
+The application will start and display output similar to:
+```
+Service started successfully
+Port: 9123
+```
 
-If the page loads successfully, the service has started correctly.
+### 5. Run tests
+
+Execute the test suite:
+```bash
+python auto_test.py
+```
+
+Test results will be written to `logs/test_run.log`.
