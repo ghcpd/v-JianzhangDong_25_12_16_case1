@@ -1,0 +1,36 @@
+{
+  "problems": [
+    {
+      "id": 1,
+      "file": "README.md",
+      "line_numbers": [36, 37, 38, 39],
+      "original": "### 4. Run the application\n```\npython main.py\n```",
+      "updated": "### 4. Run the application\n\nStart the service with the correct entrypoint (the project uses `app.py`):\n\n```bash\npython app.py\n```",
+      "fix_explanation": "README referenced `main.py` but the repository's entrypoint is `app.py`. Updated instructions to use `python app.py` so users run the correct file."
+    },
+    {
+      "id": 2,
+      "file": "README.md",
+      "line_numbers": [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34],
+      "original": "### 3. Configure environment variables\n```\ncopy .env.example .env\n```\n\nEdit .env and set the following values:\n```\nAPP_ENV=dev\nPORT=8000\nDEBUG=true\n```",
+      "updated": "### 3. Required environment variable\n\nThis project does not use `.env.example` or APP_ENV/DEBUG. Instead it reads the port from `settings.yaml` and requires the environment variable `APP_MODE` to be set to `production` in order to start successfully.",
+      "fix_explanation": "Original README instructed copying a non-existent `.env.example` and setting APP_ENV/PORT/DEBUG variables. The actual code requires `APP_MODE` and reads the port from `settings.yaml`. Documentation updated to avoid confusion and show the correct variable and expected value."
+    },
+    {
+      "id": 3,
+      "file": "README.md",
+      "line_numbers": [13, 14, 15, 16],
+      "original": "```bash\npython -m venv venv\nvenv\\Scripts\\activate\n```",
+      "updated": "We use a project-local virtual environment named `.venv` in this repository. If a `.venv` folder already exists it is safe to delete and recreate it.\n\nWindows (PowerShell):\n```powershell\npython -m venv .venv\n.\\.venv\\Scripts\\Activate.ps1\n``` \nWindows (cmd.exe):\n```cmd\npython -m venv .venv\n.venv\\Scripts\\activate\n```\nmacOS / Linux:\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\n```",
+      "fix_explanation": "Original README suggested creating a `venv` folder without guidance for platforms or the standard project-local `.venv` layout. Updated to recommend `.venv` and add platform-specific activation steps."
+    },
+    {
+      "id": 4,
+      "file": "README.md",
+      "line_numbers": [41, 42, 43, 44],
+      "original": "### 5. Verify the service\nOpen your browser and visit:\nhttp://localhost:8000\n\nIf the page loads successfully, the service has started correctly.",
+      "updated": "Expected output:\n``\nService started successfully\nPort: 9123\n```\n\n(There is no web server on port 8000 in this simple project; it prints the configured port from `settings.yaml`.)",
+      "fix_explanation": "README claimed a web service available at localhost:8000. The project is a small CLI that prints its port (9123). Updated to show the actual expected output and avoid implying an HTTP server is present."
+    }
+  ]
+}
