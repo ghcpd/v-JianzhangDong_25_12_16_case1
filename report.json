@@ -1,0 +1,36 @@
+{
+  "problems": [
+    {
+      "id": 1,
+      "file": "README.md",
+      "line_numbers": [12, 13, 14, 15],
+      "original": "python -m venv venv\nvenv\\Scripts\\activate",
+      "updated": "python -m venv .venv\n# Windows (PowerShell)\n.venv\\Scripts\\activate\n# macOS / Linux\nsource .venv/bin/activate",
+      "fix_explanation": "Use a project-local `.venv/` per instructions in the task and provide activation commands for Windows and Unix."
+    },
+    {
+      "id": 2,
+      "file": "README.md",
+      "line_numbers": [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+      "original": "copy .env.example .env\n\nEdit .env and set the following values:\nAPP_ENV=dev\nPORT=8000\nDEBUG=true",
+      "updated": "The application reads the `APP_MODE` environment variable (it **must** be set to `production`) and reads the port from `settings.yaml`.\n\n# Windows (PowerShell)\n$Env:APP_MODE = \"production\"\n\n# macOS / Linux\nexport APP_MODE=production\n\nEnsure `settings.yaml` contains the correct port (this project uses `9123` by default).",
+      "fix_explanation": "Removed reference to missing `.env.example` and replaced with correct environment variable `APP_MODE` (required by `config.py`) and guidance for both Windows and Unix shells; pointed to `settings.yaml` for the service port."
+    },
+    {
+      "id": 3,
+      "file": "README.md",
+      "line_numbers": [36, 37, 38],
+      "original": "python main.py",
+      "updated": "python app.py",
+      "fix_explanation": "The project entrypoint is `app.py` (not `main.py`) so the README must instruct running `python app.py`."
+    },
+    {
+      "id": 4,
+      "file": "README.md",
+      "line_numbers": [40, 41, 42, 43, 44],
+      "original": "Open your browser and visit:\nhttp://localhost:8000\n\nIf the page loads successfully, the service has started correctly.",
+      "updated": "The application prints startup confirmation to stdout. You should see output similar to:\n\nService started successfully\nPort: 9123\n\n(If you changed `settings.yaml` the port number will reflect that value.)",
+      "fix_explanation": "This is a console application that prints startup info rather than serving HTTP on port 8000, so verification instructions were changed to check stdout and the correct port value from `settings.yaml`."
+    }
+  ]
+}
