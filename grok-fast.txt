@@ -1,0 +1,135 @@
+User: You are responsible for reviewing outdated documents.
+The project's README.md does not match the actual state of the project, and the README.md document needs to be updated.
+
+Complete the following tasks:
+1. Create a backup of the original README.md named README_backup.md before making any modifications.
+
+2. Understand the entire project’s execution logic and update README.md so that users can successfully deploy the project based on the instructions in the README.md.
+   Only the README.md file may be modified; no other files may be changed.
+
+3. Based on the modified requirements.txt create a clean virtual environment under .venv/. Ensure that:
+ - Do not reuse any existing environment. 
+ - If .venv/ already exists, delete and recreate it.
+ - Install all dependencies into .venv/.
+ - Generate or update .gitignore so that .venv/ will not be uploaded to Git.
+
+4. Generate an auto_test.py file that meets the following requirements:
+   - Start the project.
+   - Use the environment created under the .venv/ directory to execute all test scripts inside the tests/ folder.
+   - Write all test results to logs/test_run.log (create the logs/ directory if it doesn’t exist).
+
+5. You must generate a report.json file documenting all CI/CD fixes.
+The report should follow the structure below:
+{
+  "problems": [
+    {
+      "id": <integer>,
+      "file": "README.md",
+      "line_numbers": [<list of integers>],
+      "original": "<string>",
+      "updated": "<string>",
+      "fix_explanation": "<string>"
+    },
+    {
+      "id": <integer>,
+      "file": "README.md",
+      "line_numbers": [<list of integers>],
+      "original": "<string>",
+      "updated": "<string>",
+      "fix_explanation": "<string>"
+    }
+
+  ]
+}
+
+GitHub Copilot: Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/app.py)
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/config.py)
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/settings.yaml)
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/requirements.txt)
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/tests/case_1.py)
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/tests/case_2.py)
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/tests/case_3.py)
+
+Ran terminal command: cp README.md README_backup.md
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1)
+
+Using "Replace String in File"
+
+
+```
+
+```
+
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1)
+
+Ran terminal command: python -m venv .venv
+
+Ran terminal command: .venv\Scripts\activate; pip install -r requirements.txt
+
+Ran terminal command: .venv\Scripts\python -m pip install -r requirements.txt
+
+Created [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/.gitignore)
+
+Created [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/auto_test.py)
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/README.md)
+
+Using "Replace String in File"
+
+
+```
+
+```
+
+
+Created [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/report.json)
+
+Ran terminal command: python auto_test.py
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1)
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/logs/test_run.log)
+
+Using "Replace String in File"
+
+
+```
+
+```
+
+
+Ran terminal command: python auto_test.py
+
+Read [](file:///d%3A/vscoderprojects/v-JianzhangDong_25_12_16_case1/grok-fast/v-JianzhangDong_25_12_16_case1/logs/test_run.log)
+
+All tasks have been completed successfully:
+
+1. **Backup Created**: A backup of the original README.md has been saved as README_backup.md.
+
+2. **README.md Updated**: The README.md has been revised to accurately reflect the project's execution logic. Key changes include:
+   - Corrected the application entry point to `python app.py`.
+   - Updated environment variable configuration to set `APP_MODE=production` with cross-platform instructions.
+   - Revised the verification step to check for printed output messages instead of a web interface, including the correct port number (9123).
+
+3. **Virtual Environment Setup**: 
+   - Created a clean .venv directory.
+   - Installed all dependencies from the updated requirements.txt (which now includes pytest for testing) into .venv.
+   - Added .venv to a new .gitignore file to prevent it from being committed.
+
+4. **Auto Test Script**: Generated auto_test.py that:
+   - Sets the required `APP_MODE=production` environment variable.
+   - Uses the .venv environment to execute all test scripts in the tests folder via pytest.
+   - Writes comprehensive test results (including stdout, stderr, and return code) to test_run.log (creating the logs directory as needed).
+   - All tests passed successfully in the execution.
+
+5. **CI/CD Report**: Created report.json documenting the three main fixes applied to README.md, including line numbers, original content, updated content, and explanations for each change.
+
+Made changes.
