@@ -1,0 +1,14 @@
+[2025-12-16T10:07:29.887412] Auto test started
+[2025-12-16T10:07:29.887471] Running app.py
+Service started successfully
+Port: 9123
+[2025-12-16T10:07:29.995031] app.py exit code: 0
+[2025-12-16T10:07:29.995039] Running test scripts
+[2025-12-16T10:07:29.995144] Running tests\case_1.py
+[2025-12-16T10:07:30.072196] tests\case_1.py exit code: 0
+[2025-12-16T10:07:30.072215] Running tests\case_2.py
+[2025-12-16T10:07:30.145118] tests\case_2.py exit code: 0
+[2025-12-16T10:07:30.145136] Running tests\case_3.py
+[2025-12-16T10:07:30.213885] tests\case_3.py exit code: 0
+[2025-12-16T10:07:30.213899] All tests passed.
+[2025-12-16T10:07:30.213902] Auto test finished
