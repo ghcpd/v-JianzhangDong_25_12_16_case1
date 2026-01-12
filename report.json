@@ -1,0 +1,28 @@
+{
+  "problems": [
+    {
+      "id": 1,
+      "file": "README.md",
+      "line_numbers": [17, 18, 19, 20, 21, 22],
+      "original": "copy .env.example .env\n\nEdit .env and set the following values:\nAPP_ENV=dev\nPORT=8000\nDEBUG=true",
+      "updated": "Set the APP_MODE environment variable to 'production':\n\nOn Windows:\nset APP_MODE=production\n\nOn Linux/Mac:\nexport APP_MODE=production",
+      "fix_explanation": "Updated environment variable configuration to match the actual code which requires APP_MODE set to 'production', removed unused PORT and DEBUG variables, and provided cross-platform instructions."
+    },
+    {
+      "id": 2,
+      "file": "README.md",
+      "line_numbers": [24],
+      "original": "python main.py",
+      "updated": "python app.py",
+      "fix_explanation": "Corrected the application entry point from main.py to app.py as per the project structure."
+    },
+    {
+      "id": 3,
+      "file": "README.md",
+      "line_numbers": [26, 27, 28],
+      "original": "Open your browser and visit:\nhttp://localhost:8000\n\nIf the page loads successfully, the service has started correctly.",
+      "updated": "The application should print:\nService started successfully\nPort: 9123\n\nIf you see these messages, the service has started correctly.",
+      "fix_explanation": "Updated verification step to match the actual application behavior which prints status messages instead of running a web server, and corrected the port number to 9123 as configured in settings.yaml."
+    }
+  ]
+}

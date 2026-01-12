@@ -1,0 +1,16 @@
+STDOUT:
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- D:\vscoderprojects\v-JianzhangDong_25_12_16_case1\grok-fast\v-JianzhangDong_25_12_16_case1\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\vscoderprojects\v-JianzhangDong_25_12_16_case1\grok-fast\v-JianzhangDong_25_12_16_case1
+collecting ... collected 3 items
+
+tests/case_1.py::test_app_starts PASSED                                  [ 33%]
+tests/case_2.py::test_output_contains_port PASSED                        [ 66%]
+tests/case_3.py::test_correct_port PASSED                                [100%]
+
+============================== 3 passed in 0.40s ==============================
+
+STDERR:
+
+Return code: 0

@@ -21,30 +21,24 @@ pip install -r requirements.txt
 ```
 
 ### 3. Configure environment variables
-
-Set the APP_MODE environment variable to 'production':
-
-On Windows:
 ```
-set APP_MODE=production
+copy .env.example .env
 ```
 
-On Linux/Mac:
+Edit .env and set the following values:
 ```
-export APP_MODE=production
+APP_ENV=dev
+PORT=8000
+DEBUG=true
 ```
 
 ### 4. Run the application
 ```
-python app.py
+python main.py
 ```
 
 ### 5. Verify the service
+Open your browser and visit:
+http://localhost:8000
 
-The application should print:
-```
-Service started successfully
-Port: 9123
-```
-
-If you see these messages, the service has started correctly.
+If the page loads successfully, the service has started correctly.

@@ -1,0 +1,43 @@
+You are responsible for reviewing outdated documents.
+The project's README.md does not match the actual state of the project, and the README.md document needs to be updated.
+
+Complete the following tasks:
+1. Create a backup of the original README.md named README_backup.md before making any modifications.
+
+2. Understand the entire project’s execution logic and update README.md so that users can successfully deploy the project based on the instructions in the README.md.
+   Only the README.md file may be modified; no other files may be changed.
+
+3. Based on the modified requirements.txt create a clean virtual environment under .venv/. Ensure that:
+ - Do not reuse any existing environment. 
+ - If .venv/ already exists, delete and recreate it.
+ - Install all dependencies into .venv/.
+ - Generate or update .gitignore so that .venv/ will not be uploaded to Git.
+
+4. Generate an auto_test.py file that meets the following requirements:
+   - Start the project.
+   - Use the environment created under the .venv/ directory to execute all test scripts inside the tests/ folder.
+   - Write all test results to logs/test_run.log (create the logs/ directory if it doesn’t exist).
+
+5. You must generate a report.json file documenting all CI/CD fixes.
+The report should follow the structure below:
+{
+  "problems": [
+    {
+      "id": <integer>,
+      "file": "README.md",
+      "line_numbers": [<list of integers>],
+      "original": "<string>",
+      "updated": "<string>",
+      "fix_explanation": "<string>"
+    },
+    {
+      "id": <integer>,
+      "file": "README.md",
+      "line_numbers": [<list of integers>],
+      "original": "<string>",
+      "updated": "<string>",
+      "fix_explanation": "<string>"
+    }
+
+  ]
+}
