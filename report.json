@@ -1,0 +1,44 @@
+{
+  "problems": [
+    {
+      "id": 1,
+      "file": "README.md",
+      "line_numbers": [12,13,14,15],
+      "original": "```bash\npython -m venv venv\nvenv\\Scripts\\activate\n```",
+      "updated": "```powershell\n# Remove any existing virtualenv and create a fresh one\nif (Test-Path -Path .venv) { Remove-Item -Recurse -Force .venv }\npython -m venv .venv\n.\\.venv\\Scripts\\Activate\n```",
+      "fix_explanation": "The README referenced creating a virtual environment named 'venv' and recommended reuse; project conventions and tests expect a fresh project-local '.venv' directory. Updated instructions use .venv and show how to recreate it on Windows."
+    },
+    {
+      "id": 2,
+      "file": "README.md",
+      "line_numbers": [19,20,21],
+      "original": "```\npip install -r requirements.txt\n```",
+      "updated": "```\npip install -r requirements.txt\npip install pytest\n```",
+      "fix_explanation": "The project tests rely on pytest to run; requirements.txt did not include pytest. Installing pytest in the venv during setup ensures tests can be executed."
+    },
+    {
+      "id": 3,
+      "file": "README.md",
+      "line_numbers": [30,31,32,33],
+      "original": "```\nAPP_ENV=dev\nPORT=8000\nDEBUG=true\n```",
+      "updated": "```\n# Use \"production\" mode so the service will start\nAPP_MODE=production\n```",
+      "fix_explanation": "The code reads the APP_MODE environment variable (not APP_ENV) and requires it to be 'production' to start. The README incorrectly instructed setting APP_ENV and other variables; updated to show the required APP_MODE=production."
+    },
+    {
+      "id": 4,
+      "file": "README.md",
+      "line_numbers": [36,37,38],
+      "original": "```\npython main.py\n```",
+      "updated": "```\npython app.py\n```",
+      "fix_explanation": "The repository's entrypoint is app.py (not main.py). Tests and actual runtime expect 'python app.py'. README was corrected accordingly."
+    },
+    {
+      "id": 5,
+      "file": "README.md",
+      "line_numbers": [40,41,42,43,44],
+      "original": "### 5. Verify the service\nOpen your browser and visit:\nhttp://localhost:8000\n\nIf the page loads successfully, the service has started correctly.",
+      "updated": "### 5. Run the test suite (and collect logs)\nA convenience script `auto_test.py` is provided to:...\nRun it with:\n``\npython auto_test.py\n``\nLogs will be available at `logs/test_run.log`.",
+      "fix_explanation": "The app prints to stdout (it is not a web server), so browser verification instructions were misleading. The README now instructs how to run the provided auto_test.py to verify behavior and collect logs."
+    }
+  ]
+}
